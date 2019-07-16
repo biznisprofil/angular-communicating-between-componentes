@@ -6,10 +6,12 @@ import { routing } from "./app.routing";
 
 import { HomeComponent } from "./home";
 import { AboutComponent } from "./about";
+import { MessageResolver } from './_services/message.resolver';
 
 @NgModule({
   imports: [BrowserModule, routing],
   declarations: [AppComponent, HomeComponent, AboutComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [MessageResolver]
 })
-export class AppModule {}
+export class AppModule { }
