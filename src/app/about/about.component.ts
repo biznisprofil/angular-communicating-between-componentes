@@ -7,7 +7,9 @@ import { ActivatedRoute } from "@angular/router";
 @Component({ templateUrl: "about.component.html" })
 export class AboutComponent {
   subscription: Subscription;
-  message: string;
+  message = {
+    text: ""
+  };
 
   constructor(
     private messageService: MessageService,
@@ -27,9 +29,7 @@ export class AboutComponent {
     //     this.message = message;
     //   });
 
-    this.actr.data.subscribe(data => {
-      console.log('data', data);
-    })
+    this.message.text = this.actr.snapshot.data["message"];
   }
 
   ngOnDestroy() {

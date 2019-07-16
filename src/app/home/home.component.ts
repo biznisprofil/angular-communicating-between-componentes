@@ -14,7 +14,7 @@ export class HomeComponent {
 
   sendMessage(): void {
     // send message to subscribers via observable subject
-    this.messageService.sendMessage(
+    this.messageService.changeGlobalMessage(
       "Message from Home Component to App Component!"
     );
 
